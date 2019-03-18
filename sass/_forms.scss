@@ -1,13 +1,40 @@
 .devis-form {
-  background-color: $primary;
   color: #fff;
-  padding: 15px;
+  
+  .bg-blue {
+    background-color: $primary;
+    padding: 15px;
+  }
 
   h3 {
     background-color: $white;
     color: $primary;
     font-size: 1.5em;
     margin: 0 0 15px;
+    padding: 15px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .wpcf7-list-item {
+    display: block;
+    margin-left: 0;
+  }
+
+  .wpcf7-form-control {
+    &.wpcf7-textarea,
+    &.wpcf7-text {
+      background-color: $white;
+      border: 0;
+      width: 100%;
+    }
+  }
+
+  .wpcf7-textarea {
+    height: 200px;
+    line-height: 15px;
     padding: 15px;
   }
 
@@ -18,6 +45,21 @@
 
   input {
     padding: 0 15px;
+  }
+
+  .submit-form {
+    margin-top: 8px;
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .wpcf7-submit {
+    background-color: $orange;
+    border: 0;
+    color: $white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 5px;
     width: 100%;
   }
 }
