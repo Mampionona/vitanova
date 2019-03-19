@@ -1,12 +1,13 @@
 @for $level from 1 to 6 {
   h#{$level} {
+    color: $primary;
     line-height: 1.1;
   }
 }
 
 h1,
 h2 {
-  color: $primary;
+  // color: $primary;
   font-size: 26px;
   font-weight: 700;
 }

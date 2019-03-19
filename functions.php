@@ -326,6 +326,8 @@ require get_template_directory() . '/inc/customizer.php';
 function vitanova_enqueue_scripts() {
 	wp_enqueue_style('style', get_template_directory_uri() . '/build/app.css');
 	wp_enqueue_script('owl', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), true);
+	// wp_enqueue_script('micromodal', 'https://unpkg.com/micromodal/dist/micromodal.min.js');
+	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), true);
 	wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array('owl'), true);
 
 	wp_localize_script('main', 'vitanova', array(

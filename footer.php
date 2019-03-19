@@ -17,12 +17,14 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info text-center">			
-			<a href="#" class="mentions-legales-toggler"><?php _e('Mentions légales', 'vitanova'); ?></a>
+			<a href="#" class="mentions-legales-toggler" data-toggle="modal" data-target=".bd-example-modal-lg"><?php _e('Mentions légales', 'vitanova'); ?></a>
 
 			<div class="copyright">&copy; <?php printf(__('Copyright %d. Tout droits réservés.', 'vitanova'), date('Y')); ?></div>
 		</div>
 	</footer>
 </div><!-- #page -->
+
+<?php get_template_part('template-parts/partials/template-modal'); ?>
 
 <?php wp_footer(); ?>
 </body>
