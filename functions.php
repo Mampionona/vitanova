@@ -324,7 +324,9 @@ require get_template_directory() . '/inc/customizer.php';
 
 // mamps
 function vitanova_enqueue_scripts() {
-	wp_enqueue_style('style', get_stylesheet_directory_uri() . '/build/app.css');
+	wp_enqueue_style('style', get_template_directory_uri() . '/build/app.css');
+	wp_enqueue_script('owl', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), true);
+	wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array('owl'), true);
 }
 
 add_action('wp_enqueue_scripts', 'vitanova_enqueue_scripts', 99);
@@ -346,3 +348,15 @@ function vitanova_settings_fields() {
 }
 
 add_filter('admin_init', 'vitanova_register_general_settings');
+
+// Avis client
+function avisClient($attributes) {
+	$attributes = shortcode_atts(array('nombre' => 15), $attributes);
+	$avis = get_posts(array('post_type' => 'avis', 'numberposts' => (int) $attributes['nombre']));
+
+	ob_start();
+	include(locate_template('template-parts/content/content-avis.php'));
+	return ob_get_clean();
+}
+
+add_shortcode('avis-client', 'avisClient');
