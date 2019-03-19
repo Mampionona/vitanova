@@ -8,6 +8,10 @@ body {
   background-color: $primary;
 }
 
+.text-blue {
+  color: $primary;
+}
+
 .avantages {
   p {
     &:first-child {
@@ -85,5 +89,26 @@ body {
 
   p {
     margin-bottom: 0;
+  }
+}
+
+.atouts {
+  font-size: 12px;
+  line-height: 1.1;
+
+  img {
+    max-width: 67px;
+  }
+
+  .text {
+    margin-top: 4px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    li {
+      + li {
+        margin-top: 20px;
+      }
+    }
   }
 }

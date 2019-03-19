@@ -360,3 +360,12 @@ function avisClient($attributes) {
 }
 
 add_shortcode('avis-client', 'avisClient');
+
+// Atous
+function atouts() {
+	ob_start();
+	include(locate_template('template-parts/partials/atouts.php'));
+	return ob_get_clean();
+}
+
+add_shortcode('atouts', 'atouts');
