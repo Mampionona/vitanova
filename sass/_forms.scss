@@ -61,4 +61,8 @@
     padding: 5px;
     width: 100%;
   }
+
+  @include media-breakpoint-up(lg) {
+    margin-top: -94px;
+  }
 }

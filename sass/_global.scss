@@ -112,3 +112,69 @@ body {
     }
   }
 }
+
+.soliloquy-container {
+  max-width: 100% !important;
+}
+
+.elementor-slick-slider {
+  ul.slick-dots {
+    bottom: 16px;
+    opacity: 0;
+    transition: opacity .3s;
+    z-index: 1;
+
+    li {
+      opacity: 0.8;
+
+      &,
+      button {
+        height: 12px;
+        width: 12px;
+      }
+
+      button {
+        background-color: $gray;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      + li {
+        margin-left: 14px;
+      }
+
+      .slick-active {
+        opacity: 1;
+      }
+    }
+  }
+
+  &:hover {
+    ul.slick-dots {
+      opacity: 1;
+    }
+  }
+}
+
+.modification-label {
+  position: relative;
+  
+  .modification {
+    bottom: 48px;
+    z-index: 0;
+
+    .text {
+      background: rgba($primary, .5);
+      color: $white;
+      font-size: 16px;
+      margin-left: 24px;
+      padding: 10px 50px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+}

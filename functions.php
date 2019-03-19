@@ -327,6 +327,11 @@ function vitanova_enqueue_scripts() {
 	wp_enqueue_style('style', get_template_directory_uri() . '/build/app.css');
 	wp_enqueue_script('owl', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), true);
 	wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array('owl'), true);
+
+	wp_localize_script('main', 'vitanova', array(
+		'avant' => __('Avant', 'vitanova'),
+		'apres' => __('Après', 'vitanova')
+	));
 }
 
 add_action('wp_enqueue_scripts', 'vitanova_enqueue_scripts', 99);
@@ -369,3 +374,11 @@ function atouts() {
 }
 
 add_shortcode('atouts', 'atouts');
+
+// add_filter('soliloquy_slider_transitions', 'filter_soliloquy_slider_transitions', 100);
+
+// function filter_soliloquy_slider_transitions($transitions) {
+// 	$transitions[] = array('value' => 'horizontal', 'name'  => __( 'Slide', 'soliloquy' ));
+
+// 	return $transitions;
+// }
