@@ -36,4 +36,14 @@ jQuery(function($) {
       }, 1200);
     }
   });
+
+  // $('.submit-form input').on('click', function () {
+  //   var uril = window.location.href;
+  //   goog_report_conversion(uril);
+  // });
+
+  $('.wpcf7-form').on('submit', function() {
+    var url = window.location.href;
+    goog_report_conversion(url);
+  });
 });

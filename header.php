@@ -20,6 +20,7 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11" />
 	<link href="https://fonts.googleapis.com/css?family=Titillium+Web:700,600,400" rel="stylesheet">
 	<?php wp_head(); ?>
+	<?php get_template_part('template-parts/partials/analytics'); ?>
 </head>
 
 <body <?php body_class(); ?>>

@@ -354,6 +354,25 @@ function vitanova_settings_fields() {
 
 add_filter('admin_init', 'vitanova_register_general_settings');
 
+// Adword
+function vitanova_register_adwords_general_settings() {
+    $label = '<label for="site-google-adwords">' . __('Adwords' , 'vitanova') . '</label>';
+    register_setting('general', 'google_adwords');
+    add_settings_field(
+        'google_adwords',
+        $label,
+        'vitanova_google_adwords_settings_fields',
+        'general'
+    );
+}
+ 
+function vitanova_google_adwords_settings_fields() {
+    $value = get_option('google_adwords', '');
+    echo '<textarea id="site-google-adwords" name="google_adwords" class="regular-text" rows="5">' . $value . '</textarea>';
+}
+
+add_filter('admin_init', 'vitanova_register_adwords_general_settings');
+
 // Avis client
 function avisClient($attributes) {
 	$attributes = shortcode_atts(array('nombre' => 15), $attributes);
@@ -382,3 +401,10 @@ add_shortcode('atouts', 'atouts');
 
 // 	return $transitions;
 // }
+
+function add_google_ad_scripts() {
+	$scripts = get_option('google_adwords');
+	echo wp_specialchars_decode($scripts);
+}
+
+add_action('wp_footer', 'add_google_ad_scripts');
