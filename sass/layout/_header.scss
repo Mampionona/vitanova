@@ -13,6 +13,10 @@
       font-family: Arial, sans-serif;
       font-size: 23px;
       font-weight: 700;
+
+      span {
+        margin-right: 5px;
+      }
     }
   }
 
@@ -27,5 +31,17 @@
 
   .call-img {
     max-width: 144px;
+  }
+
+  .phone {
+    @include media-breakpoint-down(lg) {
+      a {
+        font-size: 18px;
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      margin-top: 20px;
+    }
   }
 }

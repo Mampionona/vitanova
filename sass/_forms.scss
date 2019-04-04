@@ -60,6 +60,10 @@
     font-weight: 600;
     padding: 5px;
     width: 100%;
+
+    &:hover {
+      background-color: lighten($orange, 7%);
+    }
   }
 
   @include media-breakpoint-up(lg) {
