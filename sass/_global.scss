@@ -125,28 +125,27 @@ body {
 .elementor-slick-slider {
   ul.slick-dots {
     bottom: 16px;
-    opacity: 0;
+    // opacity: 0;
     transition: opacity .3s;
     z-index: 1;
 
     li {
-      opacity: 0.8;
-
       &,
       button {
-        height: 12px;
-        width: 12px;
+        height: 8px;
+        width: 8px;
       }
 
       button {
-        background-color: rgba(125, 125, 125, .5);
+        background-color: $white;
+        border-radius: 50%;
 
         &::before {
           display: none;
         }
 
         &:hover {
-          background-color: rgb(125, 125, 125);
+          background-color: $primary;
         }
       }
 
@@ -154,17 +153,19 @@ body {
         margin-left: 14px;
       }
 
-      .slick-active {
-        opacity: 1;
+      &.slick-active {
+        button {
+          background-color: $primary;
+        }
       }
     }
   }
 
-  &:hover {
-    ul.slick-dots {
-      opacity: 1;
-    }
-  }
+  // &:hover {
+  //   ul.slick-dots {
+  //     opacity: 1;
+  //   }
+  // }
 }
 
 .modification-label {
