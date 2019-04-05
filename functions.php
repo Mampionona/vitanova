@@ -410,3 +410,12 @@ function add_google_ad_scripts() {
 }
 
 add_action('wp_footer', 'add_google_ad_scripts');
+
+add_filter('the_title', 'foobar', 999, 1);
+
+function foobar($title) {
+	$site_name = get_bloginfo('name');
+	if (is_404())
+		$title = __('Page non trouvée', 'vitanova');
+	return "{$site_name} | {$title}";
+}
